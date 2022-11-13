@@ -1,0 +1,162 @@
+@keyframes pisca {
+    0% {opacity: 0.5;}
+    50% {opacity: 1;}
+    100% {opacity: 0.2;}
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 1000px;
+    height: 400px;
+    background-color: #DBD5C9;
+    margin: auto;
+    display: flex;
+}
+
+/* tela */
+
+.tela {
+    flex: 2;
+    background-image: linear-gradient(90deg, #E8E8E8, #C1C1C1);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    border: solid 3px #403A3A;
+}
+.d-1 {
+    flex: 1;
+    display: flex;
+    padding-left: 20px;
+    font-size: 18px;
+}
+.d-1-1 {
+    flex: 1;
+}
+.d-1-2 {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.d-1-1-1{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.d-1-1-2{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d-1-1-3 {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.numero{
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    margin: 3px;
+}
+
+.pisca {
+    animation-name: pisca;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.d-1-1-4{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 30px;
+}
+
+.voto_nulo,
+.voto_branco {
+    font-size: 40px;
+    font-weight: bold;
+    display: none;
+}
+
+
+.d-2 {
+    border-top: solid 3px #000;
+    height: 50px;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.d-1-image {
+    border: 1px solid #000;
+    background-color: #FFF;
+    text-align: center;
+    font-size: 16px;
+}
+.d-1-image img {
+    width: 100%;
+}
+.vice {
+    width: 80%;
+    font-size: 12px;
+}
+
+/* teclado */
+
+.teclado {
+    flex: 1;
+    background-color: #403A3A;
+    margin: 20px;
+    margin-left: 0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.teclado--linhas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    height: 20%;
+}
+.tecla {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 40px;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    box-shadow: 2px 2px rgb(41, 41, 41);
+}
+.confirma {
+    
+    font-size: 18px;
+    background-color: green;
+    width: 95px;
+    height: 50px;
+}
+.corrige {
+    color: black;
+    background-color: orange;
+    font-size: 15px;
+}
+.branco {
+    color: black;
+    background-color: white;
+    font-size: 15px;
+}
