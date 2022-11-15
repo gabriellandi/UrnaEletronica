@@ -8,8 +8,9 @@ let nulo = document.querySelector('.voto_nulo');
 let descBranco = document.querySelector('.voto_branco');
 
 let etapaAtual = 0;
-let numero = '';
+var numero = '';
 let votoBranco = false;
+let votos = [];
 
 function comecarEtapa() {
     let etapa = etapas[etapaAtual];
@@ -101,19 +102,40 @@ function confirma() {
 
     let votoConfirmado = false;
 
-    if(votoBranco === true || numero.length === etapa.numeros) {
+    const audio = new Audio(src="Assets/audio/som.mp3")
+
+    if(votoBranco === true) {
         votoConfirmado = true
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto:'branco'
+        });
+    } else if((numero.length === etapa.numeros) && numero === (etapas[etapaAtual].candidatos[0].numero || etapas[etapaAtual].candidatos[1].numero)){
+        votoConfirmado = true
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto: numero
+        });
+        console.log('errado')
+    } else {
+        votoConfirmado = true;
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto: null
+        })
     }
     
-    if(votoConfirmado = true) {
+    if(votoConfirmado === true) {
         etapaAtual += 1;
         if(etapas[etapaAtual] !== undefined) {
-            comecarEtapa()
+            comecarEtapa();
         } else {
-            console.log('FIM!')
+            document.querySelector('.tela').innerHTML = '<div class="fim">FIM</div>';
+            audio.play();
         }
     }
 };
 
 
 comecarEtapa();
+

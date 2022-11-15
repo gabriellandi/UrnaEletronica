@@ -91,6 +91,12 @@
     display: none;
 }
 
+.fim {
+    font-size: 100px;
+    font-weight: bold;
+    margin: auto;
+}
+
 
 .d-2 {
     border-top: solid 3px #000;
